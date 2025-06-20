@@ -1,0 +1,50 @@
+stages:
+- stage: Develop_stage
+  displayName: 'Develop stage'
+  condition: and(always(), contains(variables['Build.SourceBranch'], 'refs/heads/develop'))
+  jobs:
+  - job: Develop_stage
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    
+    - task: NodeTool@0
+      displayName: 'Node version'
+      inputs:
+        versionSource: 'spec'
+        versionSpec: '14.20'
+
+    - task: CmdLine@2
+      displayName: 'npm install'
+      inputs:
+        script: 'npm install'
+
+    - task: CmdLine@2
+      displayName: 'Angular install'
+      inputs:
+        script: 'npm install -g @angular/cli@latest'
+
+    - task: CmdLine@2
+      displayName: 'Build'
+      inputs:
+        script: 'ng build'
+
+
+    - task: AWSCLI@1
+      displayName: 'Deploy to S3'
+      inputs:
+        awsCredentials: 'AWS'
+        regionName: 'us-east-1'
+        awsCommand: 's3'
+        awsSubCommand: 'cp'
+        awsArguments: 'dist/app-pre-dojo s3://devsevops-poc/ --recursive'
+      
+    - task: dependency-check-build-task@6
+      inputs:
+        projectName: 'Pet-Store'
+        scanPath: '''**/*'''
+        format: 'HTML'
+        failOnCVSS: '1'
+        suppressionPath: 'exclusions.xml'
+        reportFilename: 'DependencyScanReport'
+        warnOnCVSSViolation: true

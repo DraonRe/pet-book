@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetBook</title>
+    <style>
+      /* Estilos CSS aquí */ 
+      body {
+        margin: 0;
+        padding: 0;
+      }
+  
+      header {
+        background-color: rgb(0, 119, 128);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+  
+      .main-container {
+        background-image: url('https://img.freepik.com/vector-gratis/huellas-patas-fondo-decoracion-punteada_18591-84211.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1717113600&semt=ais_user');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+  
+      footer {
+        background-color: rgb(0, 119, 128);
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+  
+      .pet-card {
+        text-align: center;
+      }
+  
+      .pet-image {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+  
+      .button-container {
+        margin-top: 10px;
+      }
+  
+      .button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+  
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+  
+      .social-icons li {
+        margin-right: 10px;
+      }
+  
+      .social-icons a {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+      }
+        /* Cambiar color del h1 a negro */
+      header h1 {
+        color: black;
+      }
+    </style>
+  </head>
+<body>
+  <div class="main-container">
+    <header>
+      <h1 style="margin: 0;">PetBook Prueba</h1>
+    </header>
+
+    <div class="grid-container">
+      <div class="pet-card">
+        <h2>Gato del desierto africano</h2>
+        <img class="pet-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCv4d3Q4-CpjG0BXRledT_jC9YXYzXp5qV8gTlWSewih1T2NOqaDgBReMnrrohxnmO_v3P2yUkcZGg27MN5UD2GE_1xezrGscYVDvFSJbOgfP0UIv7d6a0xJqouHAJsf356MhggdU2j-ed/s1600/gatoafrica.jpg" alt="Gato del desierto africano">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato del desierto africano')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato del desierto africano')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato de los bosques de noruega</h2>
+        <img class="pet-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHatcfDYik5UcB5Hrvo4pbrW3zcktuFzvu9otHgI409T1oKFvGcKMqhnFRb2TH4B8QlNFk0DsKqENCYOnCKqKD7UN2iHdkrvinayeYgcisUfV4ox-Yd5TW6cGQEFxqjKZVuVsNcHthqTfb/s1600/bosque-noruega-4.jpeg" alt="Gato de los bosques de noruega">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato de los bosques de noruega')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato de los bosques de noruega')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato de bengala</h2>
+        <img class="pet-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhAq4hTcmIlIuJxF60N3zvNSbUmsuVby3_yaWds89wxezz5nO-tmhj6GeJJhWUKPOAqqst_rroCmEOp1LZWVu5rsHqnBBcAbkaWPI5PHM8e9AKzBLDVLFmAWwkhXQ_VHCEtlI02AeQk18B/s320/gatobengala.jpg" alt="Gato de bengala">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato de bengala')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato de bengala')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato khao manee</h2>
+        <img class="pet-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEix4b4h-Go7a3yvYiL4WufjuzDk4gQXgmByi2DcynMSRNNZo-eM6u2eCBT8pqjG0kBKQYMtSJQvBoHDtE4dxQ49uFh8mF3Zexow-nCnK6sV4lXQZcH2CAazDTEE8Ec2FUXYNwd3jYkThwOC/s1600/gatodiamante.jpg" alt="Gato khao manee">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato khao manee')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato khao manee')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato maine coon</h2>
+        <img class="pet-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizWCw0SQvUCSMGLetFQNUZZ2BHUIO-Ejh-x1zCgSr4mq8Miw_3BAOR2adT6JhIZ1NNjSZmnpwfM3QC5K6yCF-dlMrypZ5HwA4A-Ys2x0IA4X_ysm-I00A_lbX-R3aEjfS_tEeEmeZmIe6U/s1600/mancoon.jpg" alt="Gato maine coon">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato maine coon')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato maine coon')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato Azul ruso</h2>
+        <img class="pet-image" src="https://www.mundogatos.com/Uploads/mundogatos.com/Imagenes/razas-gatos-azul-ruso.jpg" alt="Gato Azul ruso">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato Azul ruso')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato Azul ruso')">Adoptar</button>
+        </div>
+      </div>
+
+      <div class="pet-card">
+        <h2>Gato Azul ruso</h2>
+        <img class="pet-image" src="https://www.purina.es/sites/default/files/styles/ttt_image_original/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-06Abyssinian-Cat-Breed_0-compressed-0.webp?itok=uODsMFH2" alt="Gato Prueba">
+        <div class="button-container">
+          <button class="button" onclick="showMessage('Info: Gato Prueba')">Info</button>
+          <button class="button" onclick="showMessage('Adoptar: Gato Prueba')">Adoptar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Contacto: info@petbook.com | Teléfono: +123456789</p>
+      <ul class="social-icons">
+        <li><a href="https://facebook.com/petbook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://twitter.com/petbook"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://instagram.com/petbook"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+  <script src="./scripts.js"></scripts>
+</body>
+</html>
